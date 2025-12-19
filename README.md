@@ -11,9 +11,11 @@ git init
 git add .
 git commit -m "Initial commit"
 
-gh repo create REPO-NAME --public --push
+gh repo create blog-website --public
 
-git remote add origin git@github.com:USERNAME/REPO-NAME.git
+git remote set-url origin git@github.com:may-sec/blog-website.git
+git remote set-url origin git@github.com:may-sec/shopping-cart-app.git
+git remote set-url origin git@github.com:may-sec/movie-listing-app.git
 // git remote set-url origin git@github.com:USERNAME/REPO-NAME.git 
 
 git add .
