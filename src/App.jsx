@@ -4,7 +4,7 @@ import Footer from './components/Footer'
 import Home from './pages/Home'
 import About from './pages/About'
 import Product from './pages/Product'
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes } from "react-router"
 import NotFound from './pages/NotFound'
 import Men from './pages/Men'
 import Women from './pages/Women'
