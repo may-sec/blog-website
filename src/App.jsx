@@ -1,25 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import React from 'react'
+import Navbar from './components/Navbar'
+import Footer from './components/Footer'
+import Home from './pages/Home'
+import About from './pages/About'
+import Product from './pages/Product'
+import { Route, Routes } from 'react-router-dom'
+import NotFound from './pages/NotFound'
+import Men from './pages/Men'
+import Women from './pages/Women'
+import Kids from './pages/Kids'
+import Courses from './pages/Courses'
+import CourseDetail from './pages/CourseDetail'
+import Navbar2 from './components/Navbar2'
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
-    <>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className='h-screen bg-black text-white'>
+      <Navbar />
+      <Navbar2 />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/courses' element={<Courses />} />
+        <Route path='/courses/:courseId' element={<CourseDetail />} />
+
+        <Route path='/product' element={<Product />}>
+          <Route path='men' element={<Men />} />
+          <Route path='women' element={<Women />} />
+          <Route path='kids' element={<Kids />} />
+        </Route>
+        <Route path='*' element={<NotFound />} />
+      </Routes>
+      <Footer />
+    </div>
   )
 }
 
